@@ -1,0 +1,209 @@
+body {
+    background: linear-gradient(to right, #a1c4fd, #b56bd5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 40px;
+    color: #333;
+}
+
+
+.login-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 480px;
+    margin: 60px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Error message */
+.error {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.login-username-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input fields */
+.login-input-username, .login-input-password {
+    padding: 12px 15px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center
+
+}
+
+.login-input-username {
+    margin-bottom: 20px;
+}
+
+.login-input-username::placeholder, .login-input-password::placeholder {
+    color: gray;
+}
+
+.login-input-username:hover, .login-input-password:hover {
+    box-shadow: 0 0 5px black;
+}
+
+.login-input-username:focus, .login-input-password:focus{
+    outline: none;
+    box-shadow: 0 0 10px rgb(193, 88, 2);
+
+}
+
+.login-sign-up-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* Buttons */
+.btn-login, .btn-sign-up {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    
+    
+}
+
+.btn-login:hover, .btn-sign-up:hover {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+    transition: 1s ease-in-out;
+}
+
+/* No account */
+.no-account {
+    margin-top: 20px;
+    margin-left: -10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    transition: 0.3s ease-in-out;
+}
+
+.no-account:hover {
+    color: blue;
+}
+
+/* Remember me */
+.remember-me-container {
+    text-align: right;
+    margin-bottom: 30px;
+    margin-left: 320px;
+    margin-top: -20px;
+    font-size: 14px;
+    color: black;
+}
+
+/* Password strength bar */
+#password-strength-bar-container {
+    width: 300px;
+    height: 10px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+#password-strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+#password-strength-text {
+    font-size: 14px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+/* Sign-up page */
+.sign-up-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: 60px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.username-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sign-up-input-username, .sign-up-input-password, .sign-up-confirm-password {
+    padding: 12px 15px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+}    
+
+.sign-up-input-username:hover, .sign-up-input-password:hover, .sign-up-confirm-password:hover {
+    box-shadow: 0 0 5px black;
+}
+
+.sign-up-input-username:focus, .sign-up-input-password:focus, .sign-up-confirm-password:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgb(172, 1, 1);
+}
+
+.sign-up-input-username {
+    margin-bottom: 20px;
+}
+
+.sign-up-input-password {
+    margin-bottom: 20px;
+}
+
+.btn-sign-up-page {
+    font-size: larger;
+    width: 100%;
+    border: none;
+}
+
+.has-account {
+    margin-top: 20px;
+    margin-left: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.has-account:hover {
+    color: blue;
+}
+

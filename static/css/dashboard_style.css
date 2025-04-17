@@ -1,0 +1,130 @@
+/* Body and Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: white;
+}
+
+p {
+    font-size: 1.2em;
+    color: black;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+/* Log out button */
+.btn-logout {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #fc2415;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: 1300px;
+    margin-top: -100px;
+}
+
+.btn-logout:hover {
+    background-color: darkred;
+}
+
+
+.btn-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #4CAF50;
+    margin-left: 190px;
+    margin-top: -22px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-add:hover {
+    background-color: darkgreen;
+}
+
+.add-task-input {
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.add-task-input:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.add-task-input:focus {
+    box-shadow: 0 0 10px orange;
+}
+
+.task {
+    background-color: white;
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task:hover {
+    /* Zoom in */
+    transform: scale(1.02); 
+}
+
+.task-name {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-delete {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-delete:hover {
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold;
+    transform: scale(1.1);
+}
