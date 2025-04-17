@@ -9,7 +9,7 @@ generate_password_hash and check_password_hash are for encrypting and decrypting
 '''
 
 app = Flask(__name__)
-app.secret_key = "nbhapl128844"
+app.secret_key = "your-secret-key"
 app.register_blueprint(todo_bp, url_prefix = "/todo")  
 
 #Configuring SQLAlchemy to work with Flask
