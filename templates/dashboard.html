@@ -1,0 +1,41 @@
+{# User page #}  
+{%extends "base.html" %}
+
+{% block extra_head %}
+    <link rel = "stylesheet" href = "{{url_for("static", filename = "css/dashboard_style.css")}}"/>
+{% endblock %}
+
+
+{% block body%}
+<div>
+    <h1> Welcome, {{username}} </h1>
+    <p> Track and Manage your tasks easily with <i>Task Tracker! </i> </p>
+    <a href="{{url_for("logout")}}" class="btn-logout"> Log out </a>
+    <form action = "{{url_for("todo.add_task")}}" method = "post" class = "add-task-form">
+        {% if error%}
+        <p class = "add-error"> {{error}} </p>
+        {% endif %}
+        
+        <input 
+            type = "text"
+            name = "task_name"
+            placeholder = "Enter a task and due dates"
+            class = "add-task-input"
+        />
+        <button type = "submit" class = "btn-add"> Add Task </button>
+    </form>
+        <h2> Your tasks  </h2>
+        <div class="task-list">
+            {% for task in user_task %}
+                <div class="task">
+                    <p class="task-name">{{ task.task_name }}</p>
+                    <form action="{{ url_for('todo.delete_task', task_id=task.task_id) }}" method="post">
+                        <button type="submit" class="btn-delete">Mark as done</button>
+                    </form>
+                </div>
+            {% else %}
+                <p>All done! Congratulations!</p>
+            {% endfor %}
+        </div>       
+</div>
+{% endblock %}

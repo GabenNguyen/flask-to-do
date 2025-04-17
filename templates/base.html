@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for("static", filename = "css/style.css")}}"/>
+    
+    {# Adding a block extra_head here to link the dashboard_style.css with the its corresponding html file #}
+    {% block extra_head %}
+    <link rel = "stylesheet" href = "{{url_for("static", filename = "css/dashboard_style.css")}}"/>
+    {% endblock %}
+
+    <link rel="icon" href = "{{url_for("static", filename = "image/auth.png")}}"/>
+    <title>User Authentication</title>
+</head>
+<body>
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>

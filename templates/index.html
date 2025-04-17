@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- For styling the form -->
+<div class="login-container">
+    <h1> Welcome to Task Tracker! </h1>
+    {# Basic login elements #} 
+    <form id = "auth-form" action="{{url_for("login")}}" method = "post">
+        
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <div class = "login-username-password-container">
+            <input 
+                type="text" 
+                name="username" 
+                placeholder="Username"
+                class = "login-input-username"
+            />
+            <input 
+                type="password" 
+                name = "password" 
+                placeholder="Password"
+                class = "login-input-password"
+            />
+        </div>
+
+        <a href = "{{url_for("show_sign_up")}}" class = "no-account"><i> Don't have an account?</i> </a>
+        <div class = "remember-me-container">
+            <input
+                type ="checkbox"
+                name = "remember-me"  
+                class = "remember-me-checkbox"
+            />
+            <label for = "remember-me"> Remember me </label>
+        </div>
+         {# Jinja cannot render JavaScript #} 
+         {# use a custom variable and then use url_for to link to JS file #}
+        <div class = "login-sign-up-container">
+
+            <input 
+                type="button"
+                value = "Login"
+                class = "btn-login"
+                data_login_url = "{{url_for("login")}}" {# Use of custom variable to store the URL to the login route #}
+                onClick = "set_action_form('login')"
+            />
+
+            <input
+                type="button"
+                value="Sign up"
+                class="btn-sign-up"
+                data_sign_up_url = {{url_for("show_sign_up")}} {# Use of a custom variable to store the URL to the sign_up route #}
+                
+                {# window.location.href: returns the href (URL) of the current page #} 
+                onClick = "window.location.href = '{{url_for('show_sign_up')}}'"
+            />
+        </div>
+    </form>
+</div>
+{# Link to JS file #}
+<script src = {{url_for("static", filename = "js/script.js")}}> </script>
+
+{% endblock %}

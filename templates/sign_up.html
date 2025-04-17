@@ -1,0 +1,56 @@
+{%extends "base.html"%}
+
+{% block body%}
+<div class = "sign-up-container">
+    <h1 class = "sign-up-header"> Create an account </h1>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    {#Basisc sign up elements#}
+    {#This is the sign up page ==> clicking sign up will send the information to the database#}
+    {# ==> methods = ["POST"]  #}
+    {#The url_for here is url_for(sign_up) as when the sign up button has been clicked #}
+    {# it will use the sign_up route for validation #}
+    <form action = "{{url_for("sign_up")}}" class = "sign-up-form" method = "post">
+        <div class = "username-password-container">
+            <input
+                type = "text"
+                name = "username"
+                placeholder = "Username"
+                class = "sign-up-input-username"
+                required {#required tag force the user to enter an username#}
+            />
+
+            <input
+                type = "password"
+                name = "password"
+                placeholder = "Password"
+                class = "sign-up-input-password"
+                required {#required tag force the user to enter a password#}
+            />
+
+            <input
+                type = "password"
+                name = "confirm_password"
+                placeholder = "Re-enter your password"
+                class = "sign-up-confirm-password"
+                required {#required tag force the user to re-enter their password#}
+            />
+            <div id = "password-strength-bar-container">
+                <div id = "password-strength-bar"></div>
+            </div>
+            <p id = "password-strength-text"></p>
+            <input
+                type = "submit"
+                value = "Sign up"
+                placeholder = "Sign up"
+                class = "btn-sign-up"
+            />
+            <a href = "{{url_for("index")}}" class = "has-account"> <i>Already have an account?</i> </a>
+        </div>  
+    </form>
+</div>
+<script src = {{url_for("static", filename = "js/script.js")}}> </script>
+
+{%endblock%}
