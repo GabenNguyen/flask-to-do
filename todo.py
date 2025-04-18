@@ -50,7 +50,21 @@ def add_task():
 @todo_bp.route("/delete_task/<int:task_id>", methods = ["POST"])
 def delete_task(task_id):
     task = Task.query.filter_by(task_id=task_id, user_id=session["user_id"]).first() #get the task_id
+    
+    if("user_id" not in session):
+        session["error"] = "Please log in first to delete a task"
+        return redirect(url_for("index"))
+    
     if(task):
         db.session.delete(task) 
         db.session.commit()
-    return redirect(url_for("todo.show_task"))  
+        return redirect(url_for("todo.show_task"))  
+
+# @todo_bp.route("/edit_task/<int:task_id>", methods = ["POST"])
+# def edit_task(task_id):
+#     task = Task.query.filter_by(task_id = task_id, user_id = session["user_id"]).first()
+#     if(task.strip() == ""):
+#         return redirect(url_for("todo.show_task"))
+#     else:
+#         new_content= request.form.get("content")     
+        
