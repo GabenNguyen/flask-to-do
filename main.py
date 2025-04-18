@@ -102,11 +102,18 @@ def sign_up():
     username_input = request.form["username"]
     password_input = request.form["password"]
     confirm_password = request.form["confirm_password"]
+    password_strength = request.form.get("password_strength")
     
     if(password_input != confirm_password):
         session["error"] = "Passwords do not match! Please check again"
         return redirect(url_for("show_sign_up"))
     
+    # Ensure user enters a strong password to login
+    if(password_strength is None or password_strength <= 1):
+        session["error"] = "Please enter a stronger password with the length of at least 8 including uppercase, lowercase, special characters and numbers"
+        return redirect(url_for("show_sign_up"))
+    
+        
     user = User_Database.query.filter_by(username = username_input).first()
     
     if(user):
