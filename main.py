@@ -4,7 +4,8 @@ from datetime import timedelta
 from todo import todo_bp
 from extension import db
 '''
-werkzeug.security is a library from Werkzeug, a WSGI toolkit. Note: WSGI: Web Server Gateway Interface
+werkzeug.security is a library from Werkzeug, a WSGI toolkit. 
+Note: WSGI: Web Server Gateway Interface
 generate_password_hash and check_password_hash are for encrypting and decrypting the password, respectively
 '''
 
