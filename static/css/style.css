@@ -1,27 +1,26 @@
 body {
-    background: linear-gradient(to right, #a1c4fd, #b56bd5);
+    background: url("/static/image/blue.png");
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-h1 {
+.login-header {
     text-align: center;
     font-size: 40px;
     margin-top: 40px;
-    color: #333;
+    color: white;
 }
 
-
-.login-container {
-    background-color: white;
+/* Login container */
+.login-container  {
+    background-color:  rgba(255, 255, 255, 0.1); /* make the background a little bit transparent*/
     border-radius: 16px;
     padding: 40px 30px;
     max-width: 480px;
     margin: 60px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Error message */
 .error {
@@ -46,7 +45,8 @@ h1 {
     font-size: 16px;
     transition: 0.3s;
     width: 100%;
-    text-align: center
+    text-align: center;
+    font-style: italic;
 
 }
 
@@ -79,6 +79,7 @@ h1 {
 .btn-login, .btn-sign-up {
     padding: 12px;
     font-size: 16px;
+    font-weight: bold;
     border: none;
     border-radius: 8px;
     transition: 0.3s;
@@ -86,16 +87,13 @@ h1 {
     color: white;
     width: 100%;
     background: linear-gradient(to right, #667eea, #764ba2);
-    color: white;
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    
-    
+    transition: 0.3s ease-in-out;
 }
 
 .btn-login:hover, .btn-sign-up:hover {
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
-    transition: 1s ease-in-out;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.6);
 }
 
 /* No account */
@@ -104,12 +102,12 @@ h1 {
     margin-left: -10px;
     text-align: center;
     font-size: 14px;
-    color: #555;
+    color: white;
     transition: 0.3s ease-in-out;
 }
 
 .no-account:hover {
-    color: blue;
+    color: orange;
 }
 
 /* Remember me */
@@ -119,7 +117,7 @@ h1 {
     margin-left: 320px;
     margin-top: -20px;
     font-size: 14px;
-    color: black;
+    color: white;
 }
 
 /* Password strength bar */
@@ -148,13 +146,19 @@ h1 {
 
 /* Sign-up page */
 .sign-up-container {
-    background-color: white;
+    background-color:  rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 40px 30px;
     max-width: 500px;
     margin: 60px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+
+.sign-up-header {
+    text-align: center;
+    color: white;
+}
+
 
 .username-password-container {
     display: flex;
@@ -164,7 +168,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.sign-up-input-username, .sign-up-input-password, .sign-up-confirm-password {
+.sign-up-input-username, .sign-up-input-email, .sign-up-input-password, .sign-up-confirm-password {
     padding: 12px 15px;
     border: 1px solid lightgray;
     border-radius: 8px;
@@ -172,6 +176,7 @@ h1 {
     transition: 0.3s;
     width: 100%;
     text-align: center;
+    font-style: italic;
 }    
 
 .sign-up-input-username:hover, .sign-up-input-password:hover, .sign-up-confirm-password:hover {
@@ -184,6 +189,10 @@ h1 {
 }
 
 .sign-up-input-username {
+    margin-bottom: 20px;
+}
+
+.sign-up-input-email {
     margin-bottom: 20px;
 }
 
@@ -201,9 +210,10 @@ h1 {
     margin-top: 20px;
     margin-left: 30px;
     transition: 0.3s ease-in-out;
+    color: white;
 }
 
 .has-account:hover {
-    color: blue;
+    color: orange;
 }
 
